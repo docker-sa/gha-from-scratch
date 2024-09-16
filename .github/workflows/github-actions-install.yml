@@ -1,0 +1,23 @@
+name: Runtimes Install
+run-name: Runtimes Install 📦
+on: [push]
+jobs:
+  Install-Go:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Go
+        #uses: actions/setup-go@v4
+        uses: actions/setup-go@v5
+        with:
+          #go-version: '1.16.6'
+          go-version: '1.22.1'
+      - run: go version
+  Install-NodeJS:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup NodeJS
+        #uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
+        with:
+          node-version: '21.1.0'
+      - run: node --version
