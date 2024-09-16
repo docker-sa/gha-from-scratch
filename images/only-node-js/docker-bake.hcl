@@ -3,16 +3,19 @@ variable "REPO" {
 }
 
 variable "TAG" {
-  default = "0.0.5"
+  default = "0.0.0"
 }
 
 group "default" {
-  targets = ["too-big-image"]
+  targets = ["only-node-js"]
 }
 
-target "too-big-image" {
+target "only-node-js" {
   context = "."
-  tags = ["${REPO}/too-big-image:${TAG}"]
+  tags = ["${REPO}/only-node-js:${TAG}"]
+  platforms = [
+    "linux/amd64",
+  ]
 }
 
 # docker buildx bake --push --file docker-bake.hcl

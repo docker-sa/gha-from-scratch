@@ -13,7 +13,7 @@ group "default" {
 target "too-big-image" {
   context = "."
   tags = ["${REPO}/too-big-image:${TAG}"]
-    platforms = [
+  platforms = [
     "linux/amd64",
   ]
 }

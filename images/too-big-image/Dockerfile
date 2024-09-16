@@ -1,7 +1,6 @@
 # Use Ubuntu 23.10 as the base image
 FROM ubuntu:23.10
 
-# Set environment variables for Golang
 ENV GO_VERSION=1.23.1
 ENV NODE_VERSION=22.0.0
 

@@ -3,16 +3,19 @@ variable "REPO" {
 }
 
 variable "TAG" {
-  default = "0.0.5"
+  default = "0.0.0"
 }
 
 group "default" {
-  targets = ["too-big-image"]
+  targets = ["only-go"]
 }
 
-target "too-big-image" {
+target "only-go" {
   context = "."
-  tags = ["${REPO}/too-big-image:${TAG}"]
+  tags = ["${REPO}/only-go:${TAG}"]
+  platforms = [
+    "linux/amd64",
+  ]
 }
 
 # docker buildx bake --push --file docker-bake.hcl
