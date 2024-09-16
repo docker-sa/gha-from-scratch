@@ -5,8 +5,8 @@ jobs:
    Install-Go:
     runs-on: ubuntu-latest
     container:
-      image: golang:1.21.3-bookworm
-      #image: golang:1.22.0-alpine3.19
+      #image: golang:1.21.3-bookworm
+      image: golang:1.22.0-alpine3.19
     steps:
       - run: go version
    Install-NodeJS:
