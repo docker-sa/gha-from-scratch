@@ -1,0 +1,12 @@
+name: Runtimes Install With Containers
+run-name: Runtimes Install 🐳
+on: [push]
+jobs:
+   Install-Go-And-NodeJS:
+    runs-on: ubuntu-latest
+    container:
+      image: philippecharriere494/too-big-image:0.0.0
+    steps:
+      - run: go version
+      - run: node --version
+
